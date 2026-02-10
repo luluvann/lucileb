@@ -13,19 +13,74 @@ import {
 import { useTheme } from "next-themes";
 import { MenuIcon, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
+import { FaGitAlt, FaReact } from "react-icons/fa";
+import {
+  SiBlazor,
+  SiCss3,
+  SiHtml5,
+  SiJest,
+  SiNestjs,
+  SiShadcnui,
+  SiTailwindcss,
+  SiTypescript,
+  SiTestinglibrary,
+  SiGithub,
+} from "react-icons/si";
+import { FaVuejs } from "react-icons/fa";
+import { SiJavascript } from "react-icons/si";
+import { FaPython } from "react-icons/fa";
+import { TbBrandCSharp, TbBrandStorybook, TbSql } from "react-icons/tb";
+import { RiNextjsLine } from "react-icons/ri";
+import { GrGraphQl } from "react-icons/gr";
 
 export default function Home() {
   const { setTheme } = useTheme();
+
+  const languages = [
+    { name: "TypeScript", icon: <SiTypescript className="w-4 h-4" /> },
+    { name: "C#", icon: <TbBrandCSharp className="w-4 h-4" /> },
+    { name: "JavaScript", icon: <SiJavascript className="w-4 h-4" /> },
+    { name: "Python", icon: <FaPython className="w-4 h-4" /> },
+    { name: "SQL", icon: <TbSql className="w-4 h-4" /> },
+    { name: "HTML", icon: <SiHtml5 className="w-4 h-4" /> },
+    { name: "CSS", icon: <SiCss3 className="w-4 h-4" /> },
+  ];
+
+  const frontTechnologies = [
+    { name: "React", icon: <FaReact className="w-4 h-4" /> },
+    { name: "Vue.js", icon: <FaVuejs className="w-4 h-4" /> },
+    { name: "Blazor", icon: <SiBlazor className="w-4 h-4" /> },
+    { name: "Next.js", icon: <RiNextjsLine className="w-4 h-4" /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="w-4 h-4" /> },
+    { name: "Shadcn UI", icon: <SiShadcnui className="w-4 h-4" /> },
+    { name: "Storybook", icon: <TbBrandStorybook className="w-4 h-4" /> },
+  ];
+
+  const backTechnologies = [
+    { name: "NestJS", icon: <SiNestjs className="w-4 h-4" /> },
+    { name: "GraphQL", icon: <GrGraphQl className="w-4 h-4" /> },
+  ];
+
+  const otherTechnologies = [
+    { name: "Git", icon: <FaGitAlt className="w-4 h-4" /> },
+    { name: "GitHub", icon: <SiGithub className="w-4 h-4" /> },
+    { name: "Jest", icon: <SiJest className="w-4 h-4" /> },
+    { name: "Testing Library", icon: <SiTestinglibrary className="w-4 h-4" /> },
+  ];
 
   return (
     <div className="flex">
       <NavigationMenu className="fixed top-0 w-full bg-white/50 backdrop-blur-sm dark:bg-slate-800/50 h-16 flex justify-end items-center p-4 max-w-full">
         <NavigationMenuList className="flex items-center gap-4">
           <NavigationMenuItem className="hidden md:flex">
-            LALA
+            <span className="mr-2 text-emerald-400 font-roboto-mono">01.</span>{" "}
+            About Me
           </NavigationMenuItem>
           <NavigationMenuItem className="hidden md:flex">
-            LILI
+            <span className="mr-2 text-emerald-400 font-roboto-mono">02.</span>{" "}
+            A Few Projects
           </NavigationMenuItem>
           {/* Mobile hamburger */}
           <div className="md:hidden">
@@ -36,8 +91,18 @@ export default function Home() {
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white dark:bg-slate-800 shadow-md rounded-md mt-2 right-0 w-40">
-                <DropdownMenuItem>LALA</DropdownMenuItem>
-                <DropdownMenuItem>LILI</DropdownMenuItem>
+                <DropdownMenuItem>
+                  <span className="mr-2 text-emerald-400 font-roboto-mono">
+                    01.
+                  </span>{" "}
+                  About Me
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <span className="mr-2 text-emerald-400 font-roboto-mono">
+                    02.
+                  </span>{" "}
+                  A Few Projects
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -79,9 +144,71 @@ export default function Home() {
           <h1 className="scroll-m-20 tracking-tight leading-8  md:text-left text-center">
             I am a self-taught and bilingual (FR/EN) TypeScript/Node.js
             fullstack web developer with 4 years of experience working in agile
-            teams. I enjoy creating functional applications with clean and
-            maintainable code.
+            teams/squads in SaaS environement. I enjoy creating functional
+            applications with clean, testable and maintainable code. I'm
+            proficient with modern web technologies and frameworks, and I'm
+            always eager to learn new tools and techniques to improve my skills.
           </h1>
+          <div className="flex flex-wrap flex-col gap-4 justify-center md:justify-start justify-center">
+            <h1 className="scroll-m-20 tracking-tight leading-8  md:text-left text-center">
+              Here are the technologies I've been using:
+            </h1>
+            <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+              {languages.map((tech) => (
+                <div
+                  className="flex flex-col items-center gap-2"
+                  key={tech.name}
+                >
+                  {tech.icon && tech.icon}
+                  <Badge key={tech.name} variant="outline">
+                    {tech.name}
+                  </Badge>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+              {frontTechnologies.map((tech) => (
+                <div
+                  className="flex flex-col items-center gap-2"
+                  key={tech.name}
+                >
+                  {tech.icon && tech.icon}
+                  <Badge key={tech.name} variant="outline">
+                    {tech.name}
+                  </Badge>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+              {backTechnologies.map((tech) => (
+                <div
+                  className="flex flex-col items-center gap-2"
+                  key={tech.name}
+                >
+                  {tech.icon && tech.icon}
+                  <Badge key={tech.name} variant="outline">
+                    {tech.name}
+                  </Badge>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex  flex-wrap gap-2 md:justify-start justify-center">
+              {otherTechnologies.map((tech) => (
+                <div
+                  className="flex gap-4 flex-col items-center gap-2"
+                  key={tech.name}
+                >
+                  {tech.icon && tech.icon}
+                  <Badge key={tech.name} variant="outline">
+                    {tech.name}
+                  </Badge>
+                </div>
+              ))}
+            </div>
+          </div>
         </main>
       </div>
     </div>
