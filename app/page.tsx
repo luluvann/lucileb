@@ -66,17 +66,17 @@ export default function Home() {
       </NavigationMenu>
 
       <div className="flex w-full min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-slate-800 max-w-full">
-        <main className="flex gap-4 w-full max-w-3xl flex-col items-center justify-between py-32 px-48 bg-white dark:bg-slate-800 sm:items-start max-w-full">
-          <h4 className="text-emerald-400 scroll-m-20 text-xl font-semibold tracking-tight">
+        <main className="flex gap-4 w-full max-w-3xl flex-col items-center justify-between py-32 md:px-48 px-16 bg-white dark:bg-slate-800 md:items-start max-w-full">
+          <h4 className="text-emerald-400 scroll-m-20 text-xl font-semibold tracking-tight  md:text-left text-center">
             Hello World, I'm
           </h4>
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance">
+          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance  md:text-left text-center">
             Lucile
           </h1>
-          <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+          <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight md:text-left text-center">
             Fullstack Web Developer
           </h1>
-          <h1 className="scroll-m-20 tracking-tight leading-8">
+          <h1 className="scroll-m-20 tracking-tight leading-8  md:text-left text-center">
             I am a self-taught and bilingual (FR/EN) TypeScript/Node.js
             fullstack web developer with 4 years of experience working in agile
             teams. I enjoy creating functional applications with clean and
