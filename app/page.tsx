@@ -240,9 +240,7 @@ export default function Home() {
               href="#summary"
               className="cursor-pointer hover:text-emerald-400 transition-colors"
             >
-              <span className="mr-2 text-emerald-400 font-roboto-mono">
-                01.
-              </span>
+              <span className="mr-2 text-emerald-400 font-mono">01.</span>
               About Me
             </a>
           </NavigationMenuItem>
@@ -251,9 +249,7 @@ export default function Home() {
               href="#tech-stack"
               className="cursor-pointer hover:text-emerald-400 transition-colors"
             >
-              <span className="mr-2 text-emerald-400 font-roboto-mono">
-                02.
-              </span>
+              <span className="mr-2 text-emerald-400 font-mono">02.</span>
               My Tech Stack
             </a>
           </NavigationMenuItem>
@@ -262,10 +258,8 @@ export default function Home() {
               href="#projects"
               className="cursor-pointer hover:text-emerald-400 transition-colors"
             >
-              <span className="mr-2 text-emerald-400 font-roboto-mono">
-                03.
-              </span>
-              A Few Projects
+              <span className="mr-2 text-emerald-400 font-mono">03.</span>A Few
+              Projects
             </a>
           </NavigationMenuItem>
           <NavigationMenuItem className="hidden md:flex">
@@ -273,9 +267,7 @@ export default function Home() {
               href="#contact"
               className="cursor-pointer hover:text-emerald-400 transition-colors"
             >
-              <span className="mr-2 text-emerald-400 font-roboto-mono">
-                04.
-              </span>
+              <span className="mr-2 text-emerald-400 font-mono">04.</span>
               Contact Me
             </a>
           </NavigationMenuItem>
@@ -291,33 +283,25 @@ export default function Home() {
               <DropdownMenuContent className="bg-white dark:bg-slate-800 shadow-md rounded-md mt-2 right-0 w-40">
                 <DropdownMenuItem asChild>
                   <a href="#summary" className="cursor-pointer">
-                    <span className="mr-2 text-emerald-400 font-roboto-mono">
-                      01.
-                    </span>
+                    <span className="mr-2 text-emerald-400 font-mono">01.</span>
                     About Me
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a href="#tech-stack" className="cursor-pointer">
-                    <span className="mr-2 text-emerald-400 font-roboto-mono">
-                      02.
-                    </span>
+                    <span className="mr-2 text-emerald-400 font-mono">02.</span>
                     My Tech Stack
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a href="#projects" className="cursor-pointer">
-                    <span className="mr-2 text-emerald-400 font-roboto-mono">
-                      03.
-                    </span>
+                    <span className="mr-2 text-emerald-400 font-mono">03.</span>
                     A Few Projects
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a href="#contact" className="cursor-pointer">
-                    <span className="mr-2 text-emerald-400 font-roboto-mono">
-                      04.
-                    </span>
+                    <span className="mr-2 text-emerald-400 font-mono">04.</span>
                     Contact Me
                   </a>
                 </DropdownMenuItem>
@@ -389,9 +373,7 @@ export default function Home() {
         >
           <div className="flex gap-4 w-full max-w-3xl flex-col items-center justify-between py-32 md:px-48 px-16 dark:bg-slate-900 md:items-start max-w-full">
             <h2 className="scroll-m-20 text-3xl font-bold tracking-tight text-emerald-400 md:text-left text-center">
-              <span className="text-emerald-400 font-roboto-mono mr-2">
-                02.
-              </span>
+              <span className="text-emerald-400 font-mono mr-2">02.</span>
               My Tech Stack
             </h2>
             {/* Technologies */}
@@ -495,10 +477,8 @@ export default function Home() {
         >
           <div className="flex gap-4 w-full max-w-6xl flex-col items-center justify-start py-32 md:px-48 px-16 bg-white dark:bg-slate-800 md:items-start max-w-full">
             <h2 className="scroll-m-20 text-3xl font-bold tracking-tight text-emerald-400 md:text-left text-center">
-              <span className="text-emerald-400 font-roboto-mono mr-2">
-                03.
-              </span>{" "}
-              A Few Projects
+              <span className="text-emerald-400 font-mono mr-2">03.</span> A Few
+              Projects
             </h2>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start w-full mt-8">
               {projectCards.map((card, index) => (
@@ -562,9 +542,7 @@ export default function Home() {
           <div className="flex gap-4 w-full max-w-3xl flex-col items-center justify-center py-32 md:px-48 px-16 dark:bg-slate-900 md:items-start max-w-full">
             <div className="w-full md:w-auto">
               <h3 className="scroll-m-20 text-3xl font-bold tracking-tight text-emerald-400 md:text-left text-center">
-                <span className="text-emerald-400 font-roboto-mono mr-2">
-                  04.
-                </span>
+                <span className="text-emerald-400 font-mono mr-2">04.</span>
                 Contact Me
               </h3>
             </div>
