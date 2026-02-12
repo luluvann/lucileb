@@ -40,11 +40,18 @@ import {
   SiApollographql,
   SiPostman,
   SiInsomnia,
+  SiExpress,
 } from "react-icons/si";
 import { FaVuejs } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import { FaPython } from "react-icons/fa";
-import { TbBrandCSharp, TbBrandStorybook, TbSql } from "react-icons/tb";
+import {
+  TbBrandCSharp,
+  TbBrandPrisma,
+  TbBrandStorybook,
+  TbJson,
+  TbSql,
+} from "react-icons/tb";
 import { RiNextjsLine } from "react-icons/ri";
 import { GrGraphQl } from "react-icons/gr";
 import { VscVscode } from "react-icons/vsc";
@@ -81,8 +88,10 @@ export default function Home() {
   const backTechnologies = [
     { name: "REST Apis", icon: <MdHttp className="w-4 h-4" /> },
     { name: "NestJS", icon: <SiNestjs className="w-4 h-4" /> },
+    { name: "Express.js", icon: <SiExpress className="w-4 h-4" /> },
     { name: "GraphQL", icon: <GrGraphQl className="w-4 h-4" /> },
     { name: "Apollo GraphQL", icon: <SiApollographql className="w-4 h-4" /> },
+    { name: "Prisma", icon: <TbBrandPrisma className="w-4 h-4" /> },
   ];
 
   const databaseTechnologies = [
