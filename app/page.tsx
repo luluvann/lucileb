@@ -11,9 +11,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
-import { MenuIcon, Moon, Sun, ArrowDown, ExternalLink } from "lucide-react";
+import { MenuIcon, Moon, Sun, ArrowDown, ExternalLink, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 
 import {
   FaAngular,
@@ -60,6 +61,7 @@ import { MdHttp, MdMail } from "react-icons/md";
 
 export default function Home() {
   const { setTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const languages = [
     { name: "TypeScript", icon: <SiTypescript className="w-4 h-4" /> },
@@ -274,39 +276,13 @@ export default function Home() {
 
           {/* Mobile hamburger */}
           <div className="md:hidden">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
-                  <MenuIcon className="w-6 h-6" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white dark:bg-slate-800 shadow-md rounded-md mt-2 right-0 w-40">
-                <DropdownMenuItem asChild>
-                  <a href="#summary" className="cursor-pointer">
-                    <span className="mr-2 text-emerald-400 font-mono">01.</span>
-                    About Me
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="#tech-stack" className="cursor-pointer">
-                    <span className="mr-2 text-emerald-400 font-mono">02.</span>
-                    My Tech Stack
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="#projects" className="cursor-pointer">
-                    <span className="mr-2 text-emerald-400 font-mono">03.</span>
-                    A Few Projects
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a href="#contact" className="cursor-pointer">
-                    <span className="mr-2 text-emerald-400 font-mono">04.</span>
-                    Contact Me
-                  </a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              variant="ghost"
+              size="icon"
+            >
+              <MenuIcon className="w-6 h-6" />
+            </Button>
           </div>
 
           <DropdownMenu>
@@ -331,6 +307,66 @@ export default function Home() {
           </DropdownMenu>
         </NavigationMenuList>
       </NavigationMenu>
+
+      {/* Right panel menu for mobile */}
+      {isMenuOpen && (
+        <>
+          {/* Backdrop overlay */}
+          <div
+            className="fixed inset-0 bg-black/20 md:hidden z-40"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          {/* Right panel */}
+          <div className="fixed top-0 right-0 h-screen w-64 bg-white/50 backdrop-blur-sm dark:bg-slate-800/50 md:hidden z-50 flex flex-col p-6 gap-6 border-l border-slate-200 dark:border-slate-700">
+            <div className="flex justify-between items-center">
+              <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+                Menu
+              </h2>
+              <Button
+                onClick={() => setIsMenuOpen(false)}
+                variant="ghost"
+                size="icon"
+              >
+                <X className="w-6 h-6" />
+              </Button>
+            </div>
+            <nav className="flex flex-col gap-4">
+              <a
+                href="#summary"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-slate-700 dark:text-slate-300 hover:text-emerald-400 dark:hover:text-emerald-400 transition-colors flex items-center gap-2"
+              >
+                <span className="text-emerald-400 font-mono">01.</span>
+                About Me
+              </a>
+              <a
+                href="#tech-stack"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-slate-700 dark:text-slate-300 hover:text-emerald-400 dark:hover:text-emerald-400 transition-colors flex items-center gap-2"
+              >
+                <span className="text-emerald-400 font-mono">02.</span>
+                My Tech Stack
+              </a>
+              <a
+                href="#projects"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-slate-700 dark:text-slate-300 hover:text-emerald-400 dark:hover:text-emerald-400 transition-colors flex items-center gap-2"
+              >
+                <span className="text-emerald-400 font-mono">03.</span>A Few
+                Projects
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-slate-700 dark:text-slate-300 hover:text-emerald-400 dark:hover:text-emerald-400 transition-colors flex items-center gap-2"
+              >
+                <span className="text-emerald-400 font-mono">04.</span>
+                Contact Me
+              </a>
+            </nav>
+          </div>
+        </>
+      )}
 
       <div className="flex flex-wrap min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-slate-800 max-w-full">
         <main
