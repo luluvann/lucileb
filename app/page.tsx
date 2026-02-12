@@ -22,6 +22,7 @@ import {
   FaReact,
   FaSass,
   FaSlack,
+  FaLinkedinIn,
 } from "react-icons/fa";
 import {
   SiBlazor,
@@ -55,7 +56,7 @@ import { RiNextjsLine } from "react-icons/ri";
 import { GrGraphQl } from "react-icons/gr";
 import { VscVscode } from "react-icons/vsc";
 import { FiFigma } from "react-icons/fi";
-import { MdHttp } from "react-icons/md";
+import { MdHttp, MdMail } from "react-icons/md";
 
 export default function Home() {
   const { setTheme } = useTheme();
@@ -267,6 +268,17 @@ export default function Home() {
               A Few Projects
             </a>
           </NavigationMenuItem>
+          <NavigationMenuItem className="hidden md:flex">
+            <a
+              href="#contact"
+              className="cursor-pointer hover:text-emerald-400 transition-colors"
+            >
+              <span className="mr-2 text-emerald-400 font-roboto-mono">
+                04.
+              </span>
+              Contact Me
+            </a>
+          </NavigationMenuItem>
 
           {/* Mobile hamburger */}
           <div className="md:hidden">
@@ -296,9 +308,17 @@ export default function Home() {
                 <DropdownMenuItem asChild>
                   <a href="#projects" className="cursor-pointer">
                     <span className="mr-2 text-emerald-400 font-roboto-mono">
-                      02.
+                      03.
                     </span>
                     A Few Projects
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="#contact" className="cursor-pointer">
+                    <span className="mr-2 text-emerald-400 font-roboto-mono">
+                      04.
+                    </span>
+                    Contact Me
                   </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -524,6 +544,56 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+            <a href="#contact">
+              <Button className="mt-8 bg-emerald-400 hover:bg-emerald-500 text-slate-900 dark:text-slate-100 font-semibold flex items-center gap-2">
+                <ArrowDown className="w-4 h-4" />
+                Get In Touch
+              </Button>
+            </a>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section
+          id="contact"
+          className="flex w-full min-h-screen items-center justify-center bg-white font-sans dark:bg-slate-900 max-w-full"
+        >
+          <div className="flex gap-4 w-full max-w-3xl flex-col items-center justify-center py-32 md:px-48 px-16 dark:bg-slate-900 md:items-start max-w-full">
+            <div className="w-full md:w-auto">
+              <h3 className="scroll-m-20 text-3xl font-bold tracking-tight text-emerald-400 md:text-left text-center">
+                <span className="text-emerald-400 font-roboto-mono mr-2">
+                  04.
+                </span>
+                Contact Me
+              </h3>
+            </div>
+            <div className="flex flex-col gap-6 mt-8 w-full md:items-start items-center">
+              <a
+                href="https://www.linkedin.com/in/lucilethou"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-emerald-400 dark:hover:text-emerald-400 transition-colors"
+              >
+                <FaLinkedinIn className="w-5 h-5" />
+                <span>https://www.linkedin.com/in/lucilethou</span>
+              </a>
+              <a
+                href="https://github.com/luluvann"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-emerald-400 dark:hover:text-emerald-400 transition-colors"
+              >
+                <SiGithub className="w-5 h-5" />
+                <span>https://github.com/luluvann</span>
+              </a>
+              <a
+                href="mailto:developer.lvt@gmail.com"
+                className="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-emerald-400 dark:hover:text-emerald-400 transition-colors"
+              >
+                <MdMail className="w-5 h-5" />
+                <span>developer.lvt@gmail.com</span>
+              </a>
             </div>
           </div>
         </section>
