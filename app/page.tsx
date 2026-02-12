@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
-import { MenuIcon, Moon, Sun } from "lucide-react";
+import { MenuIcon, Moon, Sun, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -234,6 +234,12 @@ export default function Home() {
               modern web technologies and frameworks, and I'm always eager to
               learn new tools and techniques to improve my skills.
             </h1>
+            <a href="#tech-stack">
+              <Button className="mt-8 bg-emerald-400 hover:bg-emerald-500 text-slate-900 dark:text-slate-100 font-semibold flex items-center gap-2">
+                <ArrowDown className="w-4 h-4" />
+                Explore My Tech Stack
+              </Button>
+            </a>
           </section>
         </main>
 
@@ -334,6 +340,12 @@ export default function Home() {
                 ))}
               </div>
             </div>
+            <a href="#projects">
+              <Button className="mt-8 bg-emerald-400 hover:bg-emerald-500 text-slate-900 dark:text-slate-100 font-semibold flex items-center gap-2">
+                <ArrowDown className="w-4 h-4" />
+                View My Projects
+              </Button>
+            </a>
           </div>
         </section>
 
