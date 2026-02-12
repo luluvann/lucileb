@@ -49,7 +49,6 @@ import {
   TbBrandCSharp,
   TbBrandPrisma,
   TbBrandStorybook,
-  TbJson,
   TbSql,
 } from "react-icons/tb";
 import { RiNextjsLine } from "react-icons/ri";
@@ -117,12 +116,37 @@ export default function Home() {
       <NavigationMenu className="fixed top-0 w-full bg-white/50 backdrop-blur-sm dark:bg-slate-800/50 h-16 flex justify-end items-center p-4 max-w-full">
         <NavigationMenuList className="flex items-center gap-4">
           <NavigationMenuItem className="hidden md:flex">
-            <span className="mr-2 text-emerald-400 font-roboto-mono">01.</span>{" "}
-            About Me
+            <a
+              href="#summary"
+              className="cursor-pointer hover:text-emerald-400 transition-colors"
+            >
+              <span className="mr-2 text-emerald-400 font-roboto-mono">
+                01.
+              </span>
+              About Me
+            </a>
           </NavigationMenuItem>
           <NavigationMenuItem className="hidden md:flex">
-            <span className="mr-2 text-emerald-400 font-roboto-mono">02.</span>{" "}
-            A Few Projects
+            <a
+              href="#tech-stack"
+              className="cursor-pointer hover:text-emerald-400 transition-colors"
+            >
+              <span className="mr-2 text-emerald-400 font-roboto-mono">
+                02.
+              </span>
+              My Tech Stack
+            </a>
+          </NavigationMenuItem>
+          <NavigationMenuItem className="hidden md:flex">
+            <a
+              href="#projects"
+              className="cursor-pointer hover:text-emerald-400 transition-colors"
+            >
+              <span className="mr-2 text-emerald-400 font-roboto-mono">
+                03.
+              </span>
+              A Few Projects
+            </a>
           </NavigationMenuItem>
 
           {/* Mobile hamburger */}
@@ -134,17 +158,29 @@ export default function Home() {
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white dark:bg-slate-800 shadow-md rounded-md mt-2 right-0 w-40">
-                <DropdownMenuItem>
-                  <span className="mr-2 text-emerald-400 font-roboto-mono">
-                    01.
-                  </span>
-                  About Me
+                <DropdownMenuItem asChild>
+                  <a href="#summary" className="cursor-pointer">
+                    <span className="mr-2 text-emerald-400 font-roboto-mono">
+                      01.
+                    </span>
+                    About Me
+                  </a>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <span className="mr-2 text-emerald-400 font-roboto-mono">
-                    02.
-                  </span>
-                  A Few Projects
+                <DropdownMenuItem asChild>
+                  <a href="#tech-stack" className="cursor-pointer">
+                    <span className="mr-2 text-emerald-400 font-roboto-mono">
+                      02.
+                    </span>
+                    My Tech Stack
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a href="#projects" className="cursor-pointer">
+                    <span className="mr-2 text-emerald-400 font-roboto-mono">
+                      02.
+                    </span>
+                    A Few Projects
+                  </a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -173,114 +209,151 @@ export default function Home() {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <div className="flex w-full min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-slate-800 max-w-full">
-        <main className="flex gap-4 w-full max-w-3xl flex-col items-center justify-between py-32 md:px-48 px-16 bg-white dark:bg-slate-800 md:items-start max-w-full">
-          {/* Summary */}
-          <h4 className="text-emerald-400 scroll-m-20 text-xl font-semibold tracking-tight  md:text-left text-center">
-            Hello World, I'm
-          </h4>
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance  md:text-left text-center">
-            Lucile
-          </h1>
-          <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight md:text-left text-center">
-            Fullstack Web Developer
-          </h1>
-          <h1 className="scroll-m-20 tracking-tight leading-8  md:text-left text-center">
-            I am a self-taught and bilingual (FR/EN) TypeScript/Node.js
-            fullstack web developer with 4 years of experience working in agile
-            teams/squads in both start-up and scale-up SaaS (Software as a
-            Service) companies. I enjoy creating functional applications with
-            clean, testable and maintainable code. I'm proficient with modern
-            web technologies and frameworks, and I'm always eager to learn new
-            tools and techniques to improve my skills.
-          </h1>
-
-          {/* Technologies */}
-          <div className="flex flex-wrap flex-col gap-8 justify-center md:justify-start justify-center">
-            <h1 className="scroll-m-20 tracking-tight leading-8  md:text-left text-center">
-              Here are the technologies I've been using:
+      <div className="flex flex-wrap min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-slate-800 max-w-full">
+        <main
+          id="summary"
+          className="min-h-screen flex items-center justify-center w-full"
+        >
+          <section className="flex gap-4 w-full max-w-3xl flex-col items-center justify-between py-32 md:px-48 px-16 bg-white dark:bg-slate-800 md:items-start max-w-full">
+            {/* Summary */}
+            <h4 className="text-emerald-400 scroll-m-20 text-xl font-semibold tracking-tight  md:text-left text-center">
+              Hello World, I'm
+            </h4>
+            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance  md:text-left text-center">
+              Lucile
             </h1>
-            {/* Languages */}
-            <div className="flex flex-wrap gap-2 md:justify-start justify-center">
-              <span className="flex items-center">Languages</span>
-              {languages.map((tech) => (
-                <div
-                  className="flex flex-col items-center gap-2"
-                  key={tech.name}
-                >
-                  {tech.icon && tech.icon}
-                  <Badge key={tech.name} variant="outline">
-                    {tech.name}
-                  </Badge>
-                </div>
-              ))}
-            </div>
+            <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight md:text-left text-center">
+              Fullstack Web Developer
+            </h1>
+            <h1 className="scroll-m-20 tracking-tight leading-8  md:text-left text-center">
+              I am a self-taught and bilingual (FR/EN) TypeScript/Node.js
+              fullstack web developer with 4 years of experience working in
+              agile teams/squads in both start-up and scale-up SaaS (Software as
+              a Service) companies. I enjoy creating functional applications
+              with clean, testable and maintainable code. I'm proficient with
+              modern web technologies and frameworks, and I'm always eager to
+              learn new tools and techniques to improve my skills.
+            </h1>
+          </section>
+        </main>
 
-            {/* Frontend */}
-            <div className="flex flex-wrap gap-2 md:justify-start justify-center">
-              <span className="flex items-center">Frontend</span>
-              {frontTechnologies.map((tech) => (
-                <div
-                  className="flex flex-col items-center gap-2"
-                  key={tech.name}
-                >
-                  {tech.icon && tech.icon}
-                  <Badge key={tech.name} variant="outline">
-                    {tech.name}
-                  </Badge>
-                </div>
-              ))}
-            </div>
+        {/* About Section */}
+        <section
+          id="tech-stack"
+          className="flex w-full min-h-screen items-center justify-center bg-white font-sans dark:bg-slate-900 max-w-full"
+        >
+          <div className="flex gap-4 w-full max-w-3xl flex-col items-center justify-between py-32 md:px-48 px-16 dark:bg-slate-900 md:items-start max-w-full">
+            <h2 className="scroll-m-20 text-3xl font-bold tracking-tight text-emerald-400 md:text-left text-center">
+              <span className="text-emerald-400 font-roboto-mono mr-2">
+                02.
+              </span>
+              My Tech Stack
+            </h2>
+            {/* Technologies */}
+            <div className="flex flex-wrap flex-col gap-8 justify-center md:justify-start justify-center">
+              <h1 className="scroll-m-20 tracking-tight leading-8  md:text-left text-center">
+                Here are the technologies I've been using:
+              </h1>
+              {/* Languages */}
+              <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+                <span className="flex items-center">Languages</span>
+                {languages.map((tech) => (
+                  <div
+                    className="flex flex-col items-center gap-2"
+                    key={tech.name}
+                  >
+                    {tech.icon && tech.icon}
+                    <Badge key={tech.name} variant="outline">
+                      {tech.name}
+                    </Badge>
+                  </div>
+                ))}
+              </div>
 
-            {/* Backend */}
-            <div className="flex flex-wrap gap-2 md:justify-start justify-center">
-              <span className="flex items-center">Backend</span>
-              {backTechnologies.map((tech) => (
-                <div
-                  className="flex flex-col items-center gap-2"
-                  key={tech.name}
-                >
-                  {tech.icon && tech.icon}
-                  <Badge key={tech.name} variant="outline">
-                    {tech.name}
-                  </Badge>
-                </div>
-              ))}
-            </div>
+              {/* Frontend */}
+              <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+                <span className="flex items-center">Frontend</span>
+                {frontTechnologies.map((tech) => (
+                  <div
+                    className="flex flex-col items-center gap-2"
+                    key={tech.name}
+                  >
+                    {tech.icon && tech.icon}
+                    <Badge key={tech.name} variant="outline">
+                      {tech.name}
+                    </Badge>
+                  </div>
+                ))}
+              </div>
 
-            {/* Databases */}
-            <div className="flex flex-wrap gap-2 md:justify-start justify-center">
-              <span className="flex items-center">Databases</span>
-              {databaseTechnologies.map((tech) => (
-                <div
-                  className="flex flex-col items-center gap-2"
-                  key={tech.name}
-                >
-                  {tech.icon && tech.icon}
-                  <Badge key={tech.name} variant="outline">
-                    {tech.name}
-                  </Badge>
-                </div>
-              ))}
-            </div>
+              {/* Backend */}
+              <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+                <span className="flex items-center">Backend</span>
+                {backTechnologies.map((tech) => (
+                  <div
+                    className="flex flex-col items-center gap-2"
+                    key={tech.name}
+                  >
+                    {tech.icon && tech.icon}
+                    <Badge key={tech.name} variant="outline">
+                      {tech.name}
+                    </Badge>
+                  </div>
+                ))}
+              </div>
 
-            {/* Tools */}
-            <div className="flex  flex-wrap gap-2 md:justify-start justify-center">
-              <span className="flex items-center">Tools</span>
-              {tools.map((tech) => (
-                <div
-                  className="flex gap-4 flex-col items-center gap-2"
-                  key={tech.name}
-                >
-                  {tech.icon && tech.icon}
-                  <Badge key={tech.name} variant="outline">
-                    {tech.name}
-                  </Badge>
-                </div>
-              ))}
+              {/* Databases */}
+              <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+                <span className="flex items-center">Databases</span>
+                {databaseTechnologies.map((tech) => (
+                  <div
+                    className="flex flex-col items-center gap-2"
+                    key={tech.name}
+                  >
+                    {tech.icon && tech.icon}
+                    <Badge key={tech.name} variant="outline">
+                      {tech.name}
+                    </Badge>
+                  </div>
+                ))}
+              </div>
+
+              {/* Tools */}
+              <div className="flex  flex-wrap gap-2 md:justify-start justify-center">
+                <span className="flex items-center">Tools</span>
+                {tools.map((tech) => (
+                  <div
+                    className="flex gap-4 flex-col items-center gap-2"
+                    key={tech.name}
+                  >
+                    {tech.icon && tech.icon}
+                    <Badge key={tech.name} variant="outline">
+                      {tech.name}
+                    </Badge>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </main>
+        </section>
+
+        {/* Projects Section */}
+        <section
+          id="projects"
+          className="flex w-full min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-slate-800 max-w-full"
+        >
+          <div className="flex gap-4 w-full max-w-3xl flex-col items-center justify-between py-32 md:px-48 px-16 bg-white dark:bg-slate-800 md:items-start max-w-full">
+            <h2 className="scroll-m-20 text-3xl font-bold tracking-tight text-emerald-400 md:text-left text-center">
+              <span className="text-emerald-400 font-roboto-mono mr-2">
+                03.
+              </span>{" "}
+              A Few Projects
+            </h2>
+            <p className="scroll-m-20 tracking-tight leading-8 md:text-left text-center">
+              Check out some of my recent projects...
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );
