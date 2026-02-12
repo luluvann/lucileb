@@ -179,10 +179,11 @@ export default function Home() {
           <h1 className="scroll-m-20 tracking-tight leading-8  md:text-left text-center">
             I am a self-taught and bilingual (FR/EN) TypeScript/Node.js
             fullstack web developer with 4 years of experience working in agile
-            teams/squads in SaaS environement. I enjoy creating functional
-            applications with clean, testable and maintainable code. I'm
-            proficient with modern web technologies and frameworks, and I'm
-            always eager to learn new tools and techniques to improve my skills.
+            teams/squads in both start-up and scale-up SaaS (Software as a
+            Service) companies. I enjoy creating functional applications with
+            clean, testable and maintainable code. I'm proficient with modern
+            web technologies and frameworks, and I'm always eager to learn new
+            tools and techniques to improve my skills.
           </h1>
 
           {/* Technologies */}
