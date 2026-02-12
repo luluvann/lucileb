@@ -15,7 +15,14 @@ import { MenuIcon, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-import { FaGitAlt, FaReact } from "react-icons/fa";
+import {
+  FaAngular,
+  FaDocker,
+  FaGitAlt,
+  FaReact,
+  FaSass,
+  FaSlack,
+} from "react-icons/fa";
 import {
   SiBlazor,
   SiCss3,
@@ -27,6 +34,12 @@ import {
   SiTypescript,
   SiTestinglibrary,
   SiGithub,
+  SiMongodb,
+  SiJira,
+  SiPostgresql,
+  SiApollographql,
+  SiPostman,
+  SiInsomnia,
 } from "react-icons/si";
 import { FaVuejs } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
@@ -34,6 +47,9 @@ import { FaPython } from "react-icons/fa";
 import { TbBrandCSharp, TbBrandStorybook, TbSql } from "react-icons/tb";
 import { RiNextjsLine } from "react-icons/ri";
 import { GrGraphQl } from "react-icons/gr";
+import { VscVscode } from "react-icons/vsc";
+import { FiFigma } from "react-icons/fi";
+import { MdHttp } from "react-icons/md";
 
 export default function Home() {
   const { setTheme } = useTheme();
@@ -46,32 +62,49 @@ export default function Home() {
     { name: "SQL", icon: <TbSql className="w-4 h-4" /> },
     { name: "HTML", icon: <SiHtml5 className="w-4 h-4" /> },
     { name: "CSS", icon: <SiCss3 className="w-4 h-4" /> },
+    { name: "Sass", icon: <FaSass className="w-4 h-4" /> },
   ];
 
   const frontTechnologies = [
     { name: "React", icon: <FaReact className="w-4 h-4" /> },
     { name: "Vue.js", icon: <FaVuejs className="w-4 h-4" /> },
     { name: "Blazor", icon: <SiBlazor className="w-4 h-4" /> },
+    { name: "Angular", icon: <FaAngular className="w-4 h-4" /> },
     { name: "Next.js", icon: <RiNextjsLine className="w-4 h-4" /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss className="w-4 h-4" /> },
     { name: "Shadcn UI", icon: <SiShadcnui className="w-4 h-4" /> },
     { name: "Storybook", icon: <TbBrandStorybook className="w-4 h-4" /> },
-  ];
-
-  const backTechnologies = [
-    { name: "NestJS", icon: <SiNestjs className="w-4 h-4" /> },
-    { name: "GraphQL", icon: <GrGraphQl className="w-4 h-4" /> },
-  ];
-
-  const otherTechnologies = [
-    { name: "Git", icon: <FaGitAlt className="w-4 h-4" /> },
-    { name: "GitHub", icon: <SiGithub className="w-4 h-4" /> },
     { name: "Jest", icon: <SiJest className="w-4 h-4" /> },
     { name: "Testing Library", icon: <SiTestinglibrary className="w-4 h-4" /> },
   ];
 
+  const backTechnologies = [
+    { name: "REST Apis", icon: <MdHttp className="w-4 h-4" /> },
+    { name: "NestJS", icon: <SiNestjs className="w-4 h-4" /> },
+    { name: "GraphQL", icon: <GrGraphQl className="w-4 h-4" /> },
+    { name: "Apollo GraphQL", icon: <SiApollographql className="w-4 h-4" /> },
+  ];
+
+  const databaseTechnologies = [
+    { name: "PostgreSQL", icon: <SiPostgresql className="w-4 h-4" /> },
+    { name: "MongoDB", icon: <SiMongodb className="w-4 h-4" /> },
+  ];
+
+  const tools = [
+    { name: "Git", icon: <FaGitAlt className="w-4 h-4" /> },
+    { name: "GitHub", icon: <SiGithub className="w-4 h-4" /> },
+    { name: "VS Code", icon: <VscVscode className="w-4 h-4" /> },
+    { name: "Figma", icon: <FiFigma className="w-4 h-4" /> },
+    { name: "Docker", icon: <FaDocker className="w-4 h-4" /> },
+    { name: "Postman", icon: <SiPostman className="w-4 h-4" /> },
+    { name: "Insomnia", icon: <SiInsomnia className="w-4 h-4" /> },
+    { name: "Jira", icon: <SiJira className="w-4 h-4" /> },
+    { name: "Slack", icon: <FaSlack className="w-4 h-4" /> },
+  ];
+
   return (
     <div className="flex">
+      {/* Navigation */}
       <NavigationMenu className="fixed top-0 w-full bg-white/50 backdrop-blur-sm dark:bg-slate-800/50 h-16 flex justify-end items-center p-4 max-w-full">
         <NavigationMenuList className="flex items-center gap-4">
           <NavigationMenuItem className="hidden md:flex">
@@ -82,6 +115,7 @@ export default function Home() {
             <span className="mr-2 text-emerald-400 font-roboto-mono">02.</span>{" "}
             A Few Projects
           </NavigationMenuItem>
+
           {/* Mobile hamburger */}
           <div className="md:hidden">
             <DropdownMenu>
@@ -94,13 +128,13 @@ export default function Home() {
                 <DropdownMenuItem>
                   <span className="mr-2 text-emerald-400 font-roboto-mono">
                     01.
-                  </span>{" "}
+                  </span>
                   About Me
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <span className="mr-2 text-emerald-400 font-roboto-mono">
                     02.
-                  </span>{" "}
+                  </span>
                   A Few Projects
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -132,6 +166,7 @@ export default function Home() {
 
       <div className="flex w-full min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-slate-800 max-w-full">
         <main className="flex gap-4 w-full max-w-3xl flex-col items-center justify-between py-32 md:px-48 px-16 bg-white dark:bg-slate-800 md:items-start max-w-full">
+          {/* Summary */}
           <h4 className="text-emerald-400 scroll-m-20 text-xl font-semibold tracking-tight  md:text-left text-center">
             Hello World, I'm
           </h4>
@@ -149,11 +184,15 @@ export default function Home() {
             proficient with modern web technologies and frameworks, and I'm
             always eager to learn new tools and techniques to improve my skills.
           </h1>
-          <div className="flex flex-wrap flex-col gap-4 justify-center md:justify-start justify-center">
+
+          {/* Technologies */}
+          <div className="flex flex-wrap flex-col gap-8 justify-center md:justify-start justify-center">
             <h1 className="scroll-m-20 tracking-tight leading-8  md:text-left text-center">
               Here are the technologies I've been using:
             </h1>
+            {/* Languages */}
             <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+              <span className="flex items-center">Languages</span>
               {languages.map((tech) => (
                 <div
                   className="flex flex-col items-center gap-2"
@@ -167,7 +206,9 @@ export default function Home() {
               ))}
             </div>
 
+            {/* Frontend */}
             <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+              <span className="flex items-center">Frontend</span>
               {frontTechnologies.map((tech) => (
                 <div
                   className="flex flex-col items-center gap-2"
@@ -181,7 +222,9 @@ export default function Home() {
               ))}
             </div>
 
+            {/* Backend */}
             <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+              <span className="flex items-center">Backend</span>
               {backTechnologies.map((tech) => (
                 <div
                   className="flex flex-col items-center gap-2"
@@ -195,8 +238,26 @@ export default function Home() {
               ))}
             </div>
 
+            {/* Databases */}
+            <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+              <span className="flex items-center">Databases</span>
+              {databaseTechnologies.map((tech) => (
+                <div
+                  className="flex flex-col items-center gap-2"
+                  key={tech.name}
+                >
+                  {tech.icon && tech.icon}
+                  <Badge key={tech.name} variant="outline">
+                    {tech.name}
+                  </Badge>
+                </div>
+              ))}
+            </div>
+
+            {/* Tools */}
             <div className="flex  flex-wrap gap-2 md:justify-start justify-center">
-              {otherTechnologies.map((tech) => (
+              <span className="flex items-center">Tools</span>
+              {tools.map((tech) => (
                 <div
                   className="flex gap-4 flex-col items-center gap-2"
                   key={tech.name}
