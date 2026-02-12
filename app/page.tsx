@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
-import { MenuIcon, Moon, Sun, ArrowDown } from "lucide-react";
+import { MenuIcon, Moon, Sun, ArrowDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -108,6 +108,125 @@ export default function Home() {
     { name: "Insomnia", icon: <SiInsomnia className="w-4 h-4" /> },
     { name: "Jira", icon: <SiJira className="w-4 h-4" /> },
     { name: "Slack", icon: <FaSlack className="w-4 h-4" /> },
+  ];
+
+  const projectCards = [
+    {
+      title: "Scaffold project with NestJS in TypeScript & MongoDB/Mongoose",
+      description:
+        "A scaffold back-end project NestJS with a MongoDB db with basic settings and routes examples to be re-used in any new back-end projects",
+      technologies: "NestJS, MongoDB, TypeScript",
+      links: [
+        "https://github.com/luluvann/NestJSMongoDB",
+        "https://github.com/luluvann/NestJSMongoDB",
+      ],
+    },
+    {
+      title: "Login in React TS, SCSS",
+      description: "Login page",
+      technologies: "React, TypeScript, SCSS",
+      links: [
+        "https://luluvann.github.io/login-react/",
+        "https://github.com/luluvann/login-react",
+      ],
+    },
+    {
+      title: "My Portfolio",
+      description: "My webapps portfolio",
+      technologies: "HTML, CSS, Javascript",
+      links: [
+        "https://www.lucile.dev",
+        "https://github.com/luluvann/portfolio-website",
+      ],
+    },
+    {
+      title: "React Project with TypeScript and Redux",
+      description: "A React Project developped in TypeScript using Redux",
+      technologies: "HTML, Sass, TypeScript, Redux",
+      links: [
+        "https://luluvann.github.io/react-typescript-redux/",
+        "https://github.com/luluvann/react-typescript-redux",
+      ],
+    },
+    {
+      title: "Weather Web App",
+      description: "A simple web app to see the current weather in a city",
+      technologies: "React, Open Weather Map API",
+      links: [
+        "https://github.com/luluvann/react-weather-app",
+        "https://luluvann.github.io/react-weather-app/website/?city=Montreal",
+      ],
+    },
+    {
+      title: "Github Repos Lister",
+      description: "List all the public repos of a given user",
+      technologies: "React, Github API",
+      links: [
+        "https://github.com/luluvann/github-api",
+        "https://luluvann.github.io/github-api",
+      ],
+    },
+    {
+      title: "Password Generator",
+      description: "Generate a random password based on criterias",
+      technologies: "Vanilla Javascript",
+      links: [
+        "https://github.com/luluvann/password-generator",
+        "https://luluvann.github.io/password-generator",
+      ],
+    },
+    {
+      title: "Mobile App Landing Page",
+      description: "A landing page to promote a mobile app",
+      technologies: "HTML, CSS",
+      links: [
+        "https://github.com/luluvann/po-contacts",
+        "https://www.pocontacts.app",
+      ],
+    },
+    {
+      title: "Javascript Code Quiz",
+      description: "A quiz to test coding knowledge",
+      technologies: "jQuery, Bootstrap 4",
+      links: [
+        "https://github.com/luluvann/code-quiz",
+        "https://luluvann.github.io/code-quiz",
+      ],
+    },
+    {
+      title: "Weather Forecast Dashboard",
+      description:
+        "A simple weather dashboard to see current and weather forecast ",
+      technologies: "jQuery, Bootstrap 4, Open Weather Map API",
+      links: [
+        "https://github.com/luluvann/weather-dashboard",
+        "https://luluvann.github.io/weather-dashboard",
+      ],
+    },
+    {
+      title: "Pro-Trader Simulator",
+      description:
+        "An app to simulate stock exchange trading (collaborative project)",
+      technologies: "jQuery, Bootstrap 4, Server side APIs",
+      links: [
+        "https://github.com/luluvann/Pro-Trader",
+        "https://phonix375.github.io/Pro-Trader",
+      ],
+    },
+    {
+      title: "Live The Outdoors",
+      description:
+        "Full Stack Plateform to favorite hiking trails (collaborative project)",
+      technologies: "Express.js, Handlebars, Connect-Session, Sequelize, MySQL",
+      links: ["https://github.com/luluvann/live-the-outdoors"],
+    },
+    {
+      title: "The Community Gallery",
+      description:
+        "Full Stack Plateform to vote or sell artworks (collaborative project)",
+      technologies: "React.js, Express.js, GraphQL, MongoDB/Mongoose",
+      links: ["https://github.com/deepikabekal/TCG"],
+    },
   ];
 
   return (
@@ -354,16 +473,58 @@ export default function Home() {
           id="projects"
           className="flex w-full min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-slate-800 max-w-full"
         >
-          <div className="flex gap-4 w-full max-w-3xl flex-col items-center justify-between py-32 md:px-48 px-16 bg-white dark:bg-slate-800 md:items-start max-w-full">
+          <div className="flex gap-4 w-full max-w-6xl flex-col items-center justify-start py-32 md:px-48 px-16 bg-white dark:bg-slate-800 md:items-start max-w-full">
             <h2 className="scroll-m-20 text-3xl font-bold tracking-tight text-emerald-400 md:text-left text-center">
               <span className="text-emerald-400 font-roboto-mono mr-2">
                 03.
               </span>{" "}
               A Few Projects
             </h2>
-            <p className="scroll-m-20 tracking-tight leading-8 md:text-left text-center">
-              Check out some of my recent projects...
-            </p>
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start w-full mt-8">
+              {projectCards.map((card, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col w-80 min-h-56 p-4 bg-slate-200 dark:bg-slate-700 rounded-lg border border-slate-300 dark:border-slate-600 hover:shadow-lg transition-shadow"
+                >
+                  <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                    <a
+                      href={card.links[0]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-400 hover:text-emerald-500 transition-colors"
+                    >
+                      {card.title}
+                    </a>
+                  </h4>
+                  <p className="text-sm text-slate-700 dark:text-slate-300 mb-3 w-11/12">
+                    {card.description}
+                  </p>
+                  <h5 className="text-xs font-mono text-slate-600 dark:text-slate-400 mb-auto">
+                    {card.technologies}
+                  </h5>
+                  <div className="flex gap-3 mt-4">
+                    <a
+                      href={card.links[0]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-400 hover:text-emerald-500 transition-colors"
+                    >
+                      <SiGithub className="w-5 h-5" />
+                    </a>
+                    {card.links[1] && (
+                      <a
+                        href={card.links[1]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-emerald-400 hover:text-emerald-500 transition-colors"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </div>
